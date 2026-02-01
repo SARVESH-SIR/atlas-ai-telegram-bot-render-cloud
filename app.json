@@ -1,0 +1,43 @@
+{
+  "name": "atlas-ai-telegram-bot",
+  "description": "Complete ATLAS AI Telegram Bot with multi-user support deployed on Render",
+  "keywords": ["ai", "telegram", "bot", "atlas", "intelligence", "multi-user"],
+  "website": "https://github.com/atlas-ai/telegram-bot",
+  "repository": "https://github.com/atlas-ai/telegram-bot",
+  "logo": "https://example.com/logo.png",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Your Telegram Bot Token from @BotFather",
+      "required": true,
+      "value": "8544142733:AAGTAe2qfrq3A0FiwEI2JcyRx9tFn5npgyI"
+    },
+    "GroqAPIKey": {
+      "description": "Your Groq API Key for AI responses",
+      "required": true,
+      "value": "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"
+    },
+    "AssistantName": {
+      "description": "Bot assistant name",
+      "required": false,
+      "value": "ATLAS"
+    },
+    "Creator": {
+      "description": "Bot creator name",
+      "required": false,
+      "value": "K.V.SARVESH"
+    },
+    "PORT": {
+      "description": "Port for Render health checks",
+      "required": false,
+      "value": "8000"
+    }
+  },
+  "build": {
+    "env": {
+      "PYTHONPATH": "/app"
+    }
+  },
+  "scripts": {
+    "start": "python atlas_ai_telegram_bot.py"
+  }
+}

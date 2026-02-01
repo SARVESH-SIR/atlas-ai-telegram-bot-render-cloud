@@ -38,6 +38,6 @@
     }
   },
   "scripts": {
-    "start": "python atlas_ai_telegram_bot.py"
+    "start": "python app_server.py"
   }
 }

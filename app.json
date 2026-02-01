@@ -9,7 +9,7 @@
     "TELEGRAM_BOT_TOKEN": {
       "description": "Your Telegram Bot Token from @BotFather",
       "required": true,
-      "value": "8544142733:AAGTAe2qfrq3A0FiwEI2JcyRx9tFn5npgyI"
+      "value": "8555351421:AAG-8SOqO9Vqv9sIlcUIHG7lm3MRN0B4RCI"
     },
     "GroqAPIKey": {
       "description": "Your Groq API Key for AI responses",

@@ -20,7 +20,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# Environment variables
+# Environment
 .env
 .env.local
 .env.development.local
@@ -42,5 +42,9 @@ Thumbs.db
 *.log
 logs/
 
-# Render
-.render.yaml
+# Temp files
+temp/
+tmp/
+
+# Render specific
+.render/

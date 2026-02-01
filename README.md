@@ -1,18 +1,14 @@
-# 🤖 ATLAS AI Telegram Bot - Multi-User Media Edition
+# 🤖 ATLAS AI Telegram Bot - Media Edition
 
-Complete AI Telegram Bot with multi-user support and media capabilities, optimized for Render cloud services deployment.
+Complete AI Telegram Bot with media capabilities (voice, documents), optimized for Render cloud services deployment.
 
 ## 🚀 Features
 
 - ✅ **Complete AI Intelligence**: Advanced reasoning and analysis
-- ✅ **Multi-User Support**: Serve multiple users simultaneously
 - ✅ **Voice Messages**: Convert text to speech
-- ✅ **Note Generation**: Create markdown notes
 - ✅ **Document Creation**: Generate PDF, Word, Excel files
-- ✅ **Report Generation**: Multi-format summaries
+- ✅ **Single User**: Simple and fast deployment
 - ✅ **Render Optimized**: Configured for Render cloud services
-- ✅ **Individual Sessions**: Private conversation memory for each user
-- ✅ **Privacy Protection**: Complete data isolation between users
 - ✅ **24/7 Availability**: Always online with Render
 - ✅ **Health Checks**: Built-in health monitoring
 - ✅ **Auto-Deployment**: GitHub integration ready
@@ -20,57 +16,40 @@ Complete AI Telegram Bot with multi-user support and media capabilities, optimiz
 ## 📁 Files for Render Deployment
 
 ### Core Files
-- `atlas_ai_telegram_bot.py` - Main bot with media capabilities
-- `media_handler.py` - Media processing and file generation
+- `media_bot.py` - Main bot with media capabilities
+- `media_app_server.py` - HTTP server for Render port binding
 - `requirements.txt` - Python dependencies with media libraries
 - `Procfile` - Render process configuration
 - `runtime.txt` - Python version specification
 - `app.json` - Render app configuration
 
-### Docker Files (Optional)
-- `Dockerfile` - Docker container configuration
-- `docker-compose.yml` - Docker Compose setup
-- `.dockerignore` - Docker ignore rules
-
 ### Deployment Files
 - `.gitignore` - Git ignore rules
 - `README.md` - This documentation
-- `deploy_to_render.md` - Step-by-step deployment guide
 
 ## 🎵 Media Capabilities
 
 ### 🗣️ **Voice Messages**
-- Convert any text to speech
+- Convert any text to speech using pyttsx3
 - Natural voice synthesis
-- Personalized voice messages per user
-
-### 📝 **Note Generation**
-- Create structured markdown notes
-- Include AI responses and metadata
-- Personalized content per user
+- Direct voice message sending
 
 ### 📄 **Document Creation**
-- **PDF Documents**: Professional PDF generation
-- **Word Documents**: Microsoft Word format
-- **Excel Sheets**: Data organization and analysis
-- **Multi-format Reports**: All formats in one command
+- **PDF Documents**: Professional PDF generation with reportlab
+- **Word Documents**: Microsoft Word format with python-docx
+- **Excel Sheets**: Data organization with openpyxl
 
 ## 📱 Bot Commands
 
 ### Basic Commands
 - `/start` - Welcome message with media features
 - `/help` - Show all capabilities
-- `/stats` - Global bot statistics
-- `/myinfo` - Your session information
-- `/clear` - Clear your conversation
 
 ### Media Commands
 - `/voice <text>` - Convert text to voice message
-- `/note <title>` - Create markdown note file
 - `/pdf <title>` - Generate PDF document
 - `/word <title>` - Create Word document
 - `/excel <title>` - Generate Excel sheet
-- `/report <title>` - Generate multi-format report
 
 ## 🎯 Media Examples
 
@@ -79,53 +58,14 @@ Complete AI Telegram Bot with multi-user support and media capabilities, optimiz
 /voice Hello world, this is ATLAS AI speaking!
 ```
 
-### Note Creation
-```
-/note My Ideas
-```
-
 ### Document Generation
 ```
 /pdf Business Plan
 /word Meeting Notes
 /excel Project Data
-/report Summary Analysis
 ```
 
-## 👥 Multi-User Features
-
-### 🌟 **Individual User Experience**
-- **Private Sessions**: Each user gets their own conversation memory
-- **Privacy Isolation**: User data is completely separate
-- **Personal Context**: AI remembers conversations with each user individually
-- **User Preferences**: Customized experience per user
-- **Session Persistence**: Memory lasts across sessions
-- **Personal Media Files**: Each user gets their own generated files
-
-### 🔄 **Concurrent Support**
-- **Multiple Users**: Handle many users simultaneously
-- **No Interference**: Users don't affect each other
-- **Scalable Architecture**: Efficient multi-user processing
-- **Resource Management**: Optimized for multiple connections
-
-### 📊 **Statistics & Tracking**
-- **Global Stats**: Total messages, active users, uptime
-- **User Info**: Individual session details
-- **Message Counting**: Track usage per user
-- **Session Duration**: Monitor user engagement
-
-## 🌐 Render Deployment Options
-
-### Option 1: Direct Python Deployment (Recommended for Render)
-Render's native deployment without Docker - simpler and faster.
-
-### Option 2: Docker Deployment (Optional)
-If you prefer container-based deployment, Docker files are included.
-
-### Option 3: Local Docker Testing
-Test locally with Docker before deploying to Render.
-
-## 🌐 Render Deployment Steps (Direct Python)
+## 🌐 Render Deployment Steps
 
 ### Step 1: Create GitHub Repository
 1. Create a new repository on GitHub
@@ -138,12 +78,12 @@ Test locally with Docker before deploying to Render.
 3. Connect your GitHub repository
 4. Select this repository
 5. Configure the service:
-   - **Name**: `atlas-ai-telegram-bot`
+   - **Name**: `atlas-ai-telegram-bot-media`
    - **Environment**: `Python 3`
    - **Branch**: `main`
    - **Root Directory**: `/`
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `python atlas_ai_telegram_bot.py`
+   - **Start Command**: `python media_app_server.py`
 
 ### Step 3: Set Environment Variables
 Render will automatically read from `app.json`, but you can also set them manually:
@@ -158,36 +98,6 @@ Render will automatically read from `app.json`, but you can also set them manual
 2. Wait for deployment to complete
 3. Your bot will be live on Render!
 
-## 🐳 Docker Deployment (Optional)
-
-### Local Testing with Docker
-```bash
-# Build and run locally
-docker-compose up -d --build
-
-# Check logs
-docker-compose logs -f
-
-# Stop container
-docker-compose down
-```
-
-### Docker on Render
-If you prefer Docker deployment on Render:
-1. Select "Docker" environment type in Render
-2. Use the provided Dockerfile
-3. Set environment variables in Render dashboard
-
-## 📋 Deployment Comparison
-
-| Feature | Direct Python | Docker |
-|---------|---------------|--------|
-| **Speed** | ⚡ Faster | 🐳 Slower |
-| **Simplicity** | ✅ Simpler | ⚙️ More complex |
-| **Control** | 🎯 Render managed | 🛠️ Full control |
-| **Portability** | 🌐 Render only | 📦 Anywhere |
-| **Resources** | 💚 Optimized | 📦 Container overhead |
-
 ## 🧠 AI Capabilities
 
 - Complex reasoning and analysis
@@ -197,7 +107,7 @@ If you prefer Docker deployment on Render:
 - Technical support and programming
 - Educational assistance
 - Business and strategic planning
-- **Media Generation**: Voice, notes, documents
+- **Media Generation**: Voice, documents
 
 ## 🔧 Render Configuration
 
@@ -221,21 +131,13 @@ All environment variables are pre-configured in `app.json`:
 - **Accessibility**: Voice messages for all users
 - **Convenience**: Listen to AI responses
 - **Personalization**: Custom voice messages
-- **Multi-language**: Support for different languages
 
-### � **Document Generation**
+### 📝 **Document Generation**
 - **Professional Output**: High-quality documents
-- **Multiple Formats**: PDF, Word, Excel, Markdown
-- **Customizable**: Personalized content per user
+- **Multiple Formats**: PDF, Word, Excel
 - **Business Ready**: Professional document generation
 
-### 📊 **Report Generation**
-- **Comprehensive**: Multiple formats in one command
-- **Data Analysis**: Excel sheets with user statistics
-- **Documentation**: Complete conversation history
-- **Sharing**: Easy to share and distribute
-
-## �� GitHub Integration
+## 🚀 GitHub Integration
 
 ### Automatic Deployments
 - **Push to Main**: Auto-deploys on main branch updates
@@ -245,26 +147,23 @@ All environment variables are pre-configured in `app.json`:
 
 ### Repository Structure
 ```
-atlas-ai-telegram-bot/
-├── atlas_ai_telegram_bot.py  # Main bot with media
-├── media_handler.py          # Media processing
-├── requirements.txt          # Dependencies with media libs
-├── Procfile                 # Render config
-├── runtime.txt              # Python version
-├── app.json                 # Render settings
-├── Dockerfile               # Docker config (optional)
-├── docker-compose.yml       # Docker Compose (optional)
-├── .dockerignore            # Docker ignore rules
-├── .gitignore              # Git rules
-└── README.md               # Documentation
+atlas-ai-telegram-bot-media/
+├── media_bot.py              # Main bot with media
+├── media_app_server.py        # HTTP server for Render
+├── requirements.txt           # Dependencies with media libs
+├── Procfile                  # Render config
+├── runtime.txt               # Python version
+├── app.json                  # Render settings
+├── .gitignore               # Git rules
+└── README.md                # Documentation
 ```
 
-## � Ready for Deployment!
+## 🎉 Ready for Deployment!
 
 1. **Upload to GitHub**: Push all files to your repository
 2. **Deploy to Render**: Use the steps above
-3. **Test Your Bot**: Start using your multi-user AI bot with media!
-4. **Generate Media**: Try voice, notes, and document commands
+3. **Test Your Bot**: Start using your AI bot with media!
+4. **Generate Media**: Try voice, and document commands
 
 ## 📞 Support
 
@@ -275,13 +174,10 @@ atlas-ai-telegram-bot/
 ## 🎉 You're Ready for Advanced AI!
 
 Your ATLAS AI Telegram Bot is ready for Render deployment with:
-- ✅ Multi-user support
 - ✅ Complete AI intelligence
 - ✅ Voice message capabilities
 - ✅ Document generation
-- ✅ Note creation
-- ✅ Report generation
 - ✅ 24/7 availability
 - ✅ Auto-deployment from GitHub
 
-**Your complete multi-user AI bot with media capabilities is ready for deployment!** 🚀🌐🤖🎵📝📄
+**Your complete AI bot with media capabilities is ready for deployment!** 🚀🌐🤖🎵📄

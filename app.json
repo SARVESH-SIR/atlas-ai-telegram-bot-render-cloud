@@ -1,7 +1,7 @@
 {
-  "name": "atlas-ai-telegram-bot",
-  "description": "Complete ATLAS AI Telegram Bot with multi-user support deployed on Render",
-  "keywords": ["ai", "telegram", "bot", "atlas", "intelligence", "multi-user"],
+  "name": "atlas-ai-telegram-bot-media",
+  "description": "ATLAS AI Telegram Bot with Media Features - Voice, PDF, Word, Excel",
+  "keywords": ["ai", "telegram", "bot", "atlas", "media", "voice", "documents"],
   "website": "https://github.com/atlas-ai/telegram-bot",
   "repository": "https://github.com/atlas-ai/telegram-bot",
   "logo": "https://example.com/logo.png",
@@ -22,12 +22,12 @@
       "value": "ATLAS"
     },
     "Creator": {
-      "description": "Bot creator name",
+      "description": "Creator name",
       "required": false,
       "value": "K.V.SARVESH"
     },
     "PORT": {
-      "description": "Port for Render health checks",
+      "description": "Port for health checks",
       "required": false,
       "value": "8000"
     }
@@ -38,6 +38,6 @@
     }
   },
   "scripts": {
-    "start": "python app_server.py"
+    "start": "python media_app_server.py"
   }
 }

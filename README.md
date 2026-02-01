@@ -27,6 +27,11 @@ Complete AI Telegram Bot with multi-user support and media capabilities, optimiz
 - `runtime.txt` - Python version specification
 - `app.json` - Render app configuration
 
+### Docker Files (Optional)
+- `Dockerfile` - Docker container configuration
+- `docker-compose.yml` - Docker Compose setup
+- `.dockerignore` - Docker ignore rules
+
 ### Deployment Files
 - `.gitignore` - Git ignore rules
 - `README.md` - This documentation
@@ -109,7 +114,18 @@ Complete AI Telegram Bot with multi-user support and media capabilities, optimiz
 - **Message Counting**: Track usage per user
 - **Session Duration**: Monitor user engagement
 
-## 🌐 Render Deployment Steps
+## 🌐 Render Deployment Options
+
+### Option 1: Direct Python Deployment (Recommended for Render)
+Render's native deployment without Docker - simpler and faster.
+
+### Option 2: Docker Deployment (Optional)
+If you prefer container-based deployment, Docker files are included.
+
+### Option 3: Local Docker Testing
+Test locally with Docker before deploying to Render.
+
+## 🌐 Render Deployment Steps (Direct Python)
 
 ### Step 1: Create GitHub Repository
 1. Create a new repository on GitHub
@@ -141,6 +157,36 @@ Render will automatically read from `app.json`, but you can also set them manual
 1. Click "Create Web Service"
 2. Wait for deployment to complete
 3. Your bot will be live on Render!
+
+## 🐳 Docker Deployment (Optional)
+
+### Local Testing with Docker
+```bash
+# Build and run locally
+docker-compose up -d --build
+
+# Check logs
+docker-compose logs -f
+
+# Stop container
+docker-compose down
+```
+
+### Docker on Render
+If you prefer Docker deployment on Render:
+1. Select "Docker" environment type in Render
+2. Use the provided Dockerfile
+3. Set environment variables in Render dashboard
+
+## 📋 Deployment Comparison
+
+| Feature | Direct Python | Docker |
+|---------|---------------|--------|
+| **Speed** | ⚡ Faster | 🐳 Slower |
+| **Simplicity** | ✅ Simpler | ⚙️ More complex |
+| **Control** | 🎯 Render managed | 🛠️ Full control |
+| **Portability** | 🌐 Render only | 📦 Anywhere |
+| **Resources** | 💚 Optimized | 📦 Container overhead |
 
 ## 🧠 AI Capabilities
 
@@ -189,7 +235,7 @@ All environment variables are pre-configured in `app.json`:
 - **Documentation**: Complete conversation history
 - **Sharing**: Easy to share and distribute
 
-## �🚀 GitHub Integration
+## �� GitHub Integration
 
 ### Automatic Deployments
 - **Push to Main**: Auto-deploys on main branch updates
@@ -206,6 +252,9 @@ atlas-ai-telegram-bot/
 ├── Procfile                 # Render config
 ├── runtime.txt              # Python version
 ├── app.json                 # Render settings
+├── Dockerfile               # Docker config (optional)
+├── docker-compose.yml       # Docker Compose (optional)
+├── .dockerignore            # Docker ignore rules
 ├── .gitignore              # Git rules
 └── README.md               # Documentation
 ```
